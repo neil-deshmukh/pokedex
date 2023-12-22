@@ -73,7 +73,6 @@ func main() {
 			for _, area := range areas {
 				fmt.Println(" - ", area["name"])
 			}
-			iOfArea += 20
 		} else if pokemon == "mapb" {
 			if iOfArea == 0 {
 				fmt.Println("You have to go forward before you can come back")
