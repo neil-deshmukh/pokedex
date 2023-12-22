@@ -20,6 +20,14 @@ type Pokemon struct {
 }
 
 func main() {
+	fmt.Println(`Heres a list of commands i built: 
+	help - for more information
+	map - gives you a batch of 20 locations
+	mapb - gives you the previous batch of 20 location
+	explore (location) - takes a argument which is a location and return all the pokemon found in that area
+	catch (pokemon) - Tries to catch the given pokemon and returns if you caught it or not
+	inspect (pokemon) - inspects and gives you information about the given pokemon
+	pokedex - Gives you a list of all the pokemon you have caught`)
 	iOfArea := 0
 	pokedex := make(map[string]Pokemon)
 	for {
@@ -31,7 +39,13 @@ func main() {
 		}
 		pokemon = strings.TrimSpace(pokemon)
 		if pokemon == "help" {
-			fmt.Println("You enter the pokemons name of which you want information on and the rest is done for you.")
+			fmt.Println(`This is details about each command:
+			map - gives you the next batch of 20 locations
+			mapb - gives you the previous batch of 20 location. It will return an error if we are on the first batch
+			explore - Takes a location as input and returns all pokemon found in that area as output
+			catch - Takes a pokemon as input and tells you if you caught it or not. The stronger the pokemon lower the chance
+			inspect - Takes a pokemon as input and returns you the information about the pokemon. It will return error if you have not caught the given pokemon
+			pokedex - Returns a list of all the pokemon you have`)
 			continue
 		} else if pokemon == "exit" {
 			break
